@@ -35,3 +35,11 @@ sam=99912222
 Not found
 harry=12299933
 */
+val listKeys = Iterator.continually(io.StdIn.readLine()).takeWhile(_.nonEmpty).toList
+
+    for(elem <- listKeys.reverse) {
+      if(pBook.contains(elem)) println(elem + "=" + pBook(elem))
+      else println("Not found")
+    }
+    */
+*/
