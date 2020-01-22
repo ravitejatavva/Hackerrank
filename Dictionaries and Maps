@@ -1,0 +1,37 @@
+object Solution {
+
+    def main(args: Array[String]) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution
+*/      val stdin = scala.io.StdIn
+        val n = stdin.readLine.trim.toInt
+        var arr = new scala.collection.mutable.ArrayBuffer[String]()       
+        var map = new java.util.HashMap[String, String]()
+        for (i <- 0 to n-1) {
+            var kv = stdin.readLine.trim.split(" ").map(_.trim.toString)
+            map.put(kv(0),kv(1))
+        }
+        var query = ""
+        while(query!=null) {
+            var query = stdin.readLine.trim
+            if(map.containsKey(query)) {
+                println(query + "=" + map.get(query))
+            } else {println("Not found")}
+        }
+    }
+}
+
+/*input
+3
+sam 99912222
+tom 11122222
+harry 12299933
+sam
+edward
+harry
+*/
+
+/*output
+sam=99912222
+Not found
+harry=12299933
+*/
